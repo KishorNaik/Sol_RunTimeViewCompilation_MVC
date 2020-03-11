@@ -1,0 +1,19 @@
+﻿Step 1
+Download following package from Nuget
+
+Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation
+Westwind.AspnetCore.LiveReload
+
+Step 2
+Go to Startup.cs file and add following configuration code.
+
+	2.1 In ConfigureServices method, add following code
+	       services.AddLiveReload();
+
+            services
+                .AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+
+    2.2 In Configure method, add following code before the  app.UseStaticFiles();
+         
+            app.UseLiveReload();
